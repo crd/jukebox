@@ -750,16 +750,16 @@ def get_url_and_title_youtube_dl(id, retry=True):
                 info = ydl.extract_info(yt_url, download=False)
         except Exception as e:
             if 'unavailable' in e.__str__() or 'not available' in e.__str__():
-                logger.info(id+' is unavailable')
+                logger.exception(id+' is unavailable')
                 return None, None
-            logger.info('youtube_dl error')
+            logger.exception('youtube_dl error')
             if 'youtube_dl_error_mirror' in environ and 'http' in environ['youtube_dl_error_mirror']:
-                logger.info('Trying mirror: '+environ['youtube_dl_error_mirror'])
+                logger.exception('Trying mirror: '+environ['youtube_dl_error_mirror'])
                 params = {'id': id, 'function_name': environ['AWS_LAMBDA_FUNCTION_NAME']}
                 r = requests.get(environ['youtube_dl_error_mirror'], params=params)
                 info = r.json()
             elif retry:
-                logger.info('trying pytube')
+                logger.exception('trying pytube')
                 return get_url_and_title_pytube(id, False)
             else:
                 return False, False
@@ -798,14 +798,14 @@ def get_url_and_title_pytube(id, retry=True):
             return get_url_and_title_youtube_dl(id, False)
         return False, False
     except:
-        logger.info('Unable to get URL for '+id)
+        logger.exception('Unable to get URL for '+id)
         return None, None
     if video_or_audio[1] == 'video':
         first_stream = yt.streams.filter(progressive=True).first()
     else:
         first_stream = yt.streams.filter(only_audio=True, subtype='mp4').first()
     logger.info(first_stream.url)
-    return first_stream.url, first_stream.player_config_args['player_response']['videoDetails']['title']
+    return first_stream.url, first_stream.title
 
 
 def get_url_and_title_pytube_server(id):
@@ -836,7 +836,7 @@ def get_live_video_url_and_title(id):
         video_or_audio[1] = 'video'
         return url, title
     except:
-        logger.info('Unable to get m3u8')
+        logger.exception('Unable to get m3u8')
         return None, None
 
 

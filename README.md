@@ -1,12 +1,23 @@
-# alexa-youtube
+# Jukebox (fork of [alexa-youtube](https://github.com/ndg63276/alexa-youtube))
 ## Unofficial YouTube skill for Alexa
-__Last update: 15 Dec 2019__
 
+## About this Fork
+The original author, [ndg63276](https://github.com/ndg63276), was upset that others were representing their work as their own and asking for donations and decided to take the project private.
 
-## Skill is now full
-* This skill has become so popular, I am hitting the limits on the free AWS lambda tier, which is 800000 seconds of CPU time per month!
-* Unfortunately this means I am getting charged by Amazon, so I need some way to recoup my costs.
-* So I am now asking for donations through https://www.patreon.com/alexayoutube, or by clicking the **Sponsor** button at the top of this page. For **$3/month**, I will give you a unique ARN which you can use to run this skill. Email me at ndg63276@gmail.com to receive your ARN.
+If you don't want the hassle of maintaining your own implementation I encourage you to pay them for a subscription:
+
+* https://github.com/ndg63276/alexa-youtube
+* https://www.patreon.com/alexayoutube
+
+### What is Different?
+This fork is largely identical to the work of [ndg63276](https://github.com/ndg63276) as of [2019-12-15](https://github.com/ndg63276/alexa-youtube/tree/2fce8d83994612edf367228db72dd83d9c67276e), with a few minor enhancements:
+
+* Local copies of dependencies have been removed and migrated to a [pipenv](https://pipenv.pypa.io/en/latest/)-based dependency management strategy. 
+* Lambda has been migrated to support [pytube3](https://pypi.org/project/pytube3/) 
+* Exception logging has been improved in a few key areas
+
+### What is Unchanged?
+Basic features (and limitations) of this application remain the same. You will need to be comfortable tinkering with a handful of AWS Services: Lambda, CloudWatch Logs, Alexa. Refer to AWS tutorials if you get stuck.
 
 ## Features
 * Play audio from YouTube videos
