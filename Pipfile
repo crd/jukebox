@@ -7,14 +7,10 @@ verify_ssl = true
 
 [packages]
 ask-sdk-core = "*"
-python-levenshtein = "*"
 requests = "*"
-certifi = "*"
 oauth2client = "*"
 youtube-dl = "*"
-idna = "*"
 fuzzywuzzy = "*"
-chardet = "*"
 pytube3 = "*"
 
 [requires]

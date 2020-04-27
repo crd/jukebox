@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "76664fcf83906c28f835af061c4c5ef978e868809e54cba5f105028781422c7d"
+            "sha256": "e2469119c526a105bd0e7a1320f888329c94d2ebfd3df69cd7c477018b2e863c"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -43,7 +43,6 @@
                 "sha256:1d987a998c75633c40847cc966fcf5904906c920a7f17ef374f5aa4282abd304",
                 "sha256:51fcb31174be6e6664c5f69e3e1691a2d72a1a12e90f872cbdb1567eb47b6519"
             ],
-            "index": "pypi",
             "version": "==2020.4.5.1"
         },
         "chardet": {
@@ -51,7 +50,6 @@
                 "sha256:84ab92ed1c4d4f16916e05906b6b75a6c0fb5db821cc65e70cbd64a3e2a5eaae",
                 "sha256:fc323ffcaeaed0e0a02bf4d117757b98aed530d9ed4531e3e15460124c106691"
             ],
-            "index": "pypi",
             "version": "==3.0.4"
         },
         "fuzzywuzzy": {
@@ -74,7 +72,6 @@
                 "sha256:7588d1c14ae4c77d74036e8c22ff447b26d0fde8f007354fd48a7814db15b7cb",
                 "sha256:a068a21ceac8a4d63dbfd964670474107f541babbd2250d61922f029858365fa"
             ],
-            "index": "pypi",
             "version": "==2.9"
         },
         "oauth2client": {
@@ -105,13 +102,6 @@
                 "sha256:75bb3f31ea686f1197762692a9ee6a7550b59fc6ca3a1f4b5d7e32fb98e2da2a"
             ],
             "version": "==2.8.1"
-        },
-        "python-levenshtein": {
-            "hashes": [
-                "sha256:033a11de5e3d19ea25c9302d11224e1a1898fe5abd23c61c7c360c25195e3eb1"
-            ],
-            "index": "pypi",
-            "version": "==0.12.0"
         },
         "pytube3": {
             "hashes": [
