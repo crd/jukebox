@@ -19,6 +19,18 @@ This fork is largely identical to the work of [ndg63276](https://github.com/ndg6
 ### What is Unchanged?
 Basic features (and limitations) of this application remain the same. You will need to be comfortable tinkering with a handful of AWS Services: Lambda, CloudWatch Logs, Alexa. Refer to AWS tutorials if you get stuck.
 
+### Build Instructions
+* Check for and update dependencies: 
+  * `pipenv run pip list --outdated`
+  * `pipenv update --outdated`
+* Package up dependencies
+  * `cd $(eval pipenv --venv)/lib/python3.8/site-packages/`
+  * `zip -r9 jukebox.zip . -x "pip*" -x "setuptools*" -x "wheel*" -x "pkg_resources*" -x "__pycache__"`
+* Add key scripts to zipfile
+  * `zip -g bin/jukebox.zip *py`
+
+The packaged zipfile is then uploaded to AWS in the usual way.
+
 ## Features
 * Play audio from YouTube videos
 * Play video (if supported) on live videos or if you ask for just one specific video (command 8)
