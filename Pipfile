@@ -11,7 +11,7 @@ requests = "*"
 oauth2client = "*"
 youtube-dl = "*"
 fuzzywuzzy = "*"
-pytube3 = "*"
+pytube = "*"
 
 [requires]
 python_version = "3.8"
